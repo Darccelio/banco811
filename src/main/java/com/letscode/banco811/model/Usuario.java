@@ -3,6 +3,7 @@ package com.letscode.banco811.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.letscode.banco811.dto.UsuarioRequest;
+import com.sun.istack.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -29,7 +30,7 @@ public class Usuario {
     @Column(name = "cpf", nullable = false, unique = true)
     private String cpf;
 
-    @Column(name = "senha")
+    @Column(name = "senha", nullable = false)
     private String senha;
 
     @Column(name = "nome")

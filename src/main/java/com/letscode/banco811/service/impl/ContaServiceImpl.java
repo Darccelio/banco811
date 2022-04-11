@@ -3,7 +3,9 @@ package com.letscode.banco811.service.impl;
 import com.letscode.banco811.dto.ContaRequest;
 import com.letscode.banco811.dto.ContaResponse;
 import com.letscode.banco811.model.Conta;
+import com.letscode.banco811.model.TipoConta;
 import com.letscode.banco811.model.Usuario;
+import com.letscode.banco811.projections.ContaView;
 import com.letscode.banco811.respository.ContaRepository;
 import com.letscode.banco811.respository.UsuarioRepository;
 import com.letscode.banco811.service.ContaService;
@@ -42,4 +44,10 @@ public class ContaServiceImpl implements ContaService {
         ContaResponse contaResponse = new ContaResponse();
         return contaResponse.toResponse(contas);
     }
+
+    @Override
+    public List<ContaView> getAllViewByTipoConta(TipoConta tipoConta) {
+        return contaRepository.findAllByTipoConta(tipoConta);
+    }
+
 }
