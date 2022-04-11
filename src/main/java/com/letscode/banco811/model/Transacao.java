@@ -1,5 +1,6 @@
 package com.letscode.banco811.model;
 
+import com.letscode.banco811.dto.TransacaoRequest;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -48,4 +49,25 @@ public class Transacao {
     @LastModifiedDate
     private LocalDateTime dataAtualizacao;
 
+
+    public Transacao(TransacaoRequest transacaoRequest) {
+        this.valor= transacaoRequest.getValor();
+        this.tipoTransacao = transacaoRequest.getTipoTransacao();
+        this.numero = transacaoRequest.getNumero();
+        this.agencia = transacaoRequest.getAgencia();
+    }
+
+    @Override
+    public String toString() {
+        return "Transacao{" +
+                "id=" + id +
+                ", valor=" + valor +
+                ", tipoTransacao='" + tipoTransacao + '\'' +
+                ", numero=" + numero +
+                ", agencia=" + agencia +
+                ", conta=" + conta +
+                ", dataCriacao=" + dataCriacao +
+                ", dataAtualizacao=" + dataAtualizacao +
+                '}';
+    }
 }

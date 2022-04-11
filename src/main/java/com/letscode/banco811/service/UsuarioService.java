@@ -13,7 +13,7 @@ public interface UsuarioService {
 
     List<Usuario> search(String search);
 
-    Page<UsuarioResponse> getAllByCof(String cpf, int page, int size);
+    Page<UsuarioResponse> getAllByCpf(String cpf, int page, int size);
     UsuarioResponse create(UsuarioRequest usuarioRequest);
     UsuarioResponse getById(Integer id);
     Usuario update(UsuarioRequest usuarioRequest, Integer id);

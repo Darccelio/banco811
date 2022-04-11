@@ -35,7 +35,7 @@ public class UsuarioController {
             @RequestParam String cpf,
             @RequestParam(required = false, defaultValue = "0") int page,
             @RequestParam(required = false, defaultValue = "3") int size ) {
-        return usuarioService.getAllByCof(cpf, page, size);
+        return usuarioService.getAllByCpf(cpf, page, size);
     }
 
     @PostMapping

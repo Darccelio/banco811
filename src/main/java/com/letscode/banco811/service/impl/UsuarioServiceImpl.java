@@ -57,7 +57,7 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public Page<UsuarioResponse> getAllByCof(String cpf, int page, int size) {
+    public Page<UsuarioResponse> getAllByCpf(String cpf, int page, int size) {
         PageRequest pageRequest = PageRequest.of(page, size, Sort.Direction.DESC, "nome");
         return usuarioRepository.findByCpf(cpf, pageRequest);
     }
