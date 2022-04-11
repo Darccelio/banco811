@@ -17,8 +17,7 @@ import java.util.Optional;
 
 public interface ContaRepository extends JpaRepository<Conta, Integer> {
 
-    Optional<Conta> findByNumeroAndAgencia(Integer numero, Integer agencia);
-    Optional<Conta> findContaByAgencia(Integer agencia);
+
     List<Conta> findBySaldoLessThan(BigDecimal saldo);
     List<Conta> findBySaldoLessThanEqual(BigDecimal saldo);
     List<Conta> findBySaldoGreaterThan(BigDecimal saldo);
