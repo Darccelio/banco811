@@ -6,4 +6,5 @@ public interface TransacaoService {
 
     void depositar(TransacaoRequest transacaoRequest);
 
+    void transferirPara(Integer idContaOrigem, TransacaoRequest transacaoRequest);
 }

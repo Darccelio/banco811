@@ -47,4 +47,5 @@ public class Transacao {
     @Column(name = "data_atualizacao", nullable = false)
     @LastModifiedDate
     private LocalDateTime dataAtualizacao;
+
 }

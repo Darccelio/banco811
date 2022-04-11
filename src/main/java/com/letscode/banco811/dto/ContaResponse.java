@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 @Getter @Setter
 public class ContaResponse {
 
+    private Integer id;
     private UsuarioResponse usuario;
     private Integer numero;
     private Integer agencia;
@@ -25,6 +26,7 @@ public class ContaResponse {
     private LocalDateTime dataAtualizacao;
 
     public ContaResponse(Conta conta){
+        this.id = conta.getId();
         this.usuario = new UsuarioResponse(conta.getUsuario());
         this.numero = conta.getNumero();
         this.agencia = conta.getAgencia();
