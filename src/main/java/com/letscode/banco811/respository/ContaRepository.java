@@ -13,9 +13,11 @@ import org.springframework.data.repository.query.Param;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 public interface ContaRepository extends JpaRepository<Conta, Integer> {
 
+    Optional<Conta> findContaByAgencia(Integer agencia);
     List<Conta> findBySaldoLessThan(BigDecimal saldo);
     List<Conta> findBySaldoLessThanEqual(BigDecimal saldo);
     List<Conta> findBySaldoGreaterThan(BigDecimal saldo);

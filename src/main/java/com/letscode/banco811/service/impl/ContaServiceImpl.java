@@ -50,4 +50,6 @@ public class ContaServiceImpl implements ContaService {
         return contaRepository.findAllByTipoConta(tipoConta);
     }
 
+
+
 }

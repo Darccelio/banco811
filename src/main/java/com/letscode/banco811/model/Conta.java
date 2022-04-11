@@ -1,5 +1,6 @@
 package com.letscode.banco811.model;
 
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -55,6 +56,13 @@ public class Conta {
   @JoinColumn(name = "usuario_id", referencedColumnName = "id") //especificando em quais colunas as duas contas se relacionam (PK e FK) ->> usuario_id está dentro de conta e id está dentro de usuario
   private Usuario usuario; // mapeando ao Relacionamento entre Usuário e Conta
 
+
+  public void atualizarSaldo(BigDecimal valor, String tipoOperacao) {
+    if (tipoOperacao.equals("credito")) this.saldo = this.saldo.add(valor);
+    else {
+      this.saldo = this.saldo.subtract(valor);
+    }
+  }
 
 
 }
